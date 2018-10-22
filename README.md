@@ -145,7 +145,7 @@ console.log(value) //Victor
 
 ### selectAll
 
-Similiar to a document.querySelectorAll but returns a Result monad from [folktale](https://folktale.origamitower.com/api/v2.3.0/en/folktale.result.html).
+Similiar to an document.querySelectorAll but returns a Result monad from [folktale](https://folktale.origamitower.com/api/v2.3.0/en/folktale.result.html).
 **But querySelectorAll returns a NodeList and safedom, a Array.**
 
 
@@ -161,7 +161,7 @@ console.log(value)//InternalConstructor [{value: div#app}]
 
 ### getAttr
 
-Similiar to a el.getAttribute but returns a Result monad from [folktale](https://folktale.origamitower.com/api/v2.3.0/en/folktale.result.html).
+Similiar to a node.getAttribute but returns a Result monad from [folktale](https://folktale.origamitower.com/api/v2.3.0/en/folktale.result.html).
 
 ```javascript
 //<div id="app" data-value="10">hello world</div>
