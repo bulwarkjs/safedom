@@ -1,0 +1,11 @@
+*.spec.js
+.npmignore
+test/
+
+*.log
+.DS_Store
+.DS_Store?
+.Trashes
+ehthumbs.db
+Thumbs.db
+docs
