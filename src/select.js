@@ -1,12 +1,12 @@
 const { Ok, Error } = require('folktale/result')
 
-const select = (value, node) => {
-  const selectNode = (value, node) => {
-    const a = node.querySelector(value)
-    return a ? Ok(a) : Error(`Selector: '${value}' dont found \nMethod: select`)
-  }
+const selectNode = (query, node) => {
+  const el = node.querySelector(query)
+  return el ? Ok(el) : Error(`Selector: '${query}' dont found \nMethod: select`)
+}
 
-  return node ? selectNode(value, node) : selectNode(value, document)
+const select = (query, node) => {
+  return node ? selectNode(query, node) : selectNode(query, document)
 }
 
 module.exports = select
