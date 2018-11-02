@@ -41,7 +41,7 @@ const value = safedom.select('#app')
   .chain(safedom.getAttr('data-value'))
   .map(eff => eff.value)
   .map(parseInt)
-   map(value => value + 100)
+  .map(value => value + 100)
   .getOrElse(0)
 
 console.log(value) // 110
@@ -170,7 +170,7 @@ const value = safedom.select('#app')
   .chain(safedom.getAttr('data-value')) //should use chain because getAttr returns a Result
   .map(eff => eff.value)
   .map(parseInt)
-   map(value => value + 100)
+  .map(value => value + 100)
   .getOrElse(0)
 
 console.log(value) // 110
