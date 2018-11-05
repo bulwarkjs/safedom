@@ -1,18 +1,16 @@
 {
   "name": "safedom",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "safedom is a safe way to you manipulate dom using a purer functional style.",
-  "main": "./index.js",
+  "main": "./build/dist/safedom.min.js",
   "scripts": {
     "preversion": "npm run build",
     "precommit": "lint-staged",
-    "postpublish": "npm run docs:deploy",
     "build:publish": "npm test && ./bin/publish",
     "build:dist": "webpack && uglifyjs build/dist/safedom.js -c \"warnings=false\" -m -o build/dist/safedom.min.js",
     "build": "doctoc && rimraf build && buble -i src -o build && npm run build:dist",
     "doctoc": "doctoc README.md",
     "docs:dev": "cd docs && npm start",
-    "docs:deploy": "cd docs && npm run docs:deploy",
     "lint": "eslint --ext .md,.js .",
     "lint:dev": "esw --ext .md,.js . -w --color",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
@@ -71,6 +69,6 @@
     "webpack-cli": "^3.1.1"
   },
   "dependencies": {
-    "folktale": "^2.3.1"
+    "folktale": "2.3.1"
   }
 }
