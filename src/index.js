@@ -5,5 +5,6 @@ module.exports = {
   disable: require('./disable'),
   enable: require('./enable'),
   on: require('./on'),
-  removeAttr: require('./removeAttr')
+  removeAttr: require('./removeAttr'),
+  removeAttrByQuery: require('./removeAttrByQuery')
 }
