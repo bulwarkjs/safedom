@@ -10,4 +10,4 @@ const removeAttrByQuery = curry(2, (attr, query) => {
     .mapError(() => `Selector: '${query}' not found \nMethod: removeAttrByQuery`)
 })
 
-export default removeAttrByQuery
+module.exports = removeAttrByQuery
