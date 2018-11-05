@@ -4,5 +4,6 @@ module.exports = {
   getAttr: require('./getAttr'),
   disable: require('./disable'),
   enable: require('./enable'),
-  on: require('./on')
+  on: require('./on'),
+  removeAttr: require('./removeAttr')
 }
