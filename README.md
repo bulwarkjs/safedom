@@ -258,7 +258,7 @@ or
 // <div data-id="multiple-divs" random="attribute"></div>
 
 safedom.selectAll('[data-id="multiple-divs"]')
-    .map(node => node.forEach(safedom.removeAttr('random')))
+    .map(nodes => nodes.forEach(safedom.removeAttr('random')))
 
 // <div data-id="multiple-divs"></div>
 // <div data-id="multiple-divs"></div>
