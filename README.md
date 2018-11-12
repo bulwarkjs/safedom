@@ -15,6 +15,8 @@ safedom is a safe way to you manipulate dom using a purer functional style.
   - [disable](#disable)
   - [enable](#enable)
   - [on](#on)
+  - [removeAttr](#removeAttr)
+  - [removeAttrByQuery](#removeAttrByQuery)
 - [License](#license)
 
 ## Installation
@@ -25,11 +27,11 @@ safedom is a safe way to you manipulate dom using a purer functional style.
 $ npm install safedom -S
 ```
 
-## Why safedom ? 
+## Why safedom ?
 
 
-In many applications most of the errors are still related to DOM manipulations, 
-and as we are dealing with side effects, we need to have null checks, but safedom lets you do this safely. 
+In many applications most of the errors are still related to DOM manipulations,
+and as we are dealing with side effects, we need to have null checks, but safedom lets you do this safely.
 All safe functions are automatically curried and emphasizes a purer functional style.
 
 ## Overview
@@ -64,11 +66,11 @@ safedom.select('#apslkajdp')
   .map(value => value + 100)
   .matchWith({
     Ok: ({ value }) => value,
-    
+
     Error: ({ value: error }) => {
       console.log(error)
       /*
-        Selector: '#apslkajdp' dont found 
+        Selector: '#apslkajdp' dont found
         Method: select
       */
     }
@@ -88,11 +90,11 @@ const value = safedom.select('#dragon')
   .map(parseInt)
   .matchWith({
     Ok: ({ value }) => value,
-    
+
     Error: ({ value: error }) => {
       console.log(error)
       /*
-        Attribute: 'data-value' don't found 
+        Attribute: 'data-value' don't found
         Node: [object HTMLDivElement]
         Method: getAttr
       */
@@ -126,7 +128,7 @@ const safedom = require('safedom')
 const value = safedom.select('#dragon')
   .map(element => element.textContent)
   .map(console.log)
-  
+
 console.log(value) //hello world
 ```
 
@@ -192,7 +194,7 @@ console.log(value)// InternalConstructor {value: div#app.disabled}
 const safedom = require('safedom')
 const value = safedom.disable('#app')
   .map((el) => {
-    console.log(e) 
+    console.log(e)
     //<div id="app" class="disabled" readonly="true" aria-disabled="true"> Victor </div>
     return el
   })
@@ -215,7 +217,7 @@ console.log(value)// InternalConstructor {value: div#app}
 const safedom = require('safedom')
 const value = safedom.enable('#app')
   .map((el) => {
-    console.log(e) 
+    console.log(e)
     //<div id="app">hello world</div>
     return el
   })
@@ -237,6 +239,43 @@ safedom.select('#app')
  .map(safedom.on('click'))
  .map(clickStream => clickStream(handleClick))
 ```
+
+### removeAttr
+
+Remove attribute from a node element
+
+```javascript
+// <div data-id="div-with-attribute" random="attribute"></div>
+
+safedom.select('[data-id="div-with-attribute"]')
+    .map(safedom.removeAttr('random'))
+
+// <div data-id="div-with-attribute"></div>
+
+or
+
+// <div data-id="multiple-divs" random="attribute"></div>
+// <div data-id="multiple-divs" random="attribute"></div>
+
+safedom.selectAll('[data-id="multiple-divs"]')
+    .map(node => node.forEach(safedom.removeAttr('random')))
+
+// <div data-id="multiple-divs"></div>
+// <div data-id="multiple-divs"></div>
+```
+
+### removeAttrByQuery
+Remove attribute from a node element using query.
+Note: this function does not use **selectAll**, so it will only remove the attribute from the first element found in DOM
+```javascript
+// <div data-id="div-with-attribute" random="attribute"></div>
+
+safedom.removeAttrByQuery('random', '[data-id="div-with-attribute"]')
+
+// <div data-id="div-with-attribute"></div>
+
+```
+
 
 License
 -------
