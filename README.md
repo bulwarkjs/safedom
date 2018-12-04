@@ -17,6 +17,10 @@ safedom is a safe way to you manipulate dom using a purer functional style.
   - [on](#on)
   - [removeAttr](#removeAttr)
   - [removeAttrByQuery](#removeAttrByQuery)
+  - [setAttr](#setAttr)
+  - [addClass](#addClass)
+  - [removeClass](#removeClass)
+  
 - [License](#license)
 
 ## Installation
@@ -265,6 +269,7 @@ safedom.selectAll('[data-id="multiple-divs"]')
 ```
 
 ### removeAttrByQuery
+
 Remove attribute from a node element using query.
 Note: this function does not use **selectAll**, so it will only remove the attribute from the first element found in DOM
 ```javascript
@@ -276,6 +281,54 @@ safedom.removeAttrByQuery('random', '[data-id="div-with-attribute"]')
 
 ```
 
+### setAttr
+
+Similiar to a node.classList.setAttribute()
+
+parameters -> setAttr(attr, value, node)
+the 'map' is already passing the third parameter to setAttr, which would be the 'Node'
+
+```javascript
+//<div class="myClass"></div>
+
+const safedom = require('safedom')
+safedom.select(`.myClass`)
+        .map(safedom.setAttr('id', 'app'))
+        
+//<div class="myClass" id="app"></div>
+
+```
+
+### addClass
+
+Similiar to a node.classList.add()
+
+Variable index was being passed at the beginning of the method I was implementing
+
+```javascript
+//<div class="machine-container"></div>
+//<div class="machine-container"></div>
+
+const safedom = require('safedom')
+safedom.selectAll(`.machine-container`)
+        .map(elements => {
+          return elements.forEach((element, i) =>
+            i !== index && safedom.addClass('-with-scale', element))
+        })
+```
+
+### removeClass
+
+Similiar to a node.classList.remove()
+```javascript
+//<div class="machine-container"></div>
+//<div class="machine-container -with-scale"></div>
+
+const safedom = require('safedom')
+
+safedom.selectAll(`.machine-container`)
+        .map(R.forEach(safedom.removeClass('-with-scale')))
+```
 
 License
 -------
