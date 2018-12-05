@@ -4,10 +4,8 @@ const curry = require('folktale/core/lambda/curry')
 
 const setAttr = curry(3, (attr, value, node) => {
   if (isElementNode(node)) {
-    const element = node.setAttribute(attr, value)
-    return element
-      ? Ok({ node, element })
-      : Error(`Attribute: '${attr}' don't found \nNode: ${node}\nMethod: setAttr`)
+    node.setAttribute(attr, value)
+    return Ok(node)
   }
 
   return Error('You should to pass a [DOM Node] \nMethod: setAttr')
