@@ -17,6 +17,10 @@ safedom is a safe way to you manipulate dom using a purer functional style.
   - [on](#on)
   - [removeAttr](#removeAttr)
   - [removeAttrByQuery](#removeAttrByQuery)
+  - [setAttr](#setAttr)
+  - [addClass](#addClass)
+  - [removeClass](#removeClass)
+  
 - [License](#license)
 
 ## Installation
@@ -265,6 +269,7 @@ safedom.selectAll('[data-id="multiple-divs"]')
 ```
 
 ### removeAttrByQuery
+
 Remove attribute from a node element using query.
 Note: this function does not use **selectAll**, so it will only remove the attribute from the first element found in DOM
 ```javascript
@@ -276,6 +281,53 @@ safedom.removeAttrByQuery('random', '[data-id="div-with-attribute"]')
 
 ```
 
+### setAttr
+
+Similiar to a node.classList.setAttribute()
+
+```javascript
+//<div class="myClass"></div>
+
+const safedom = require('safedom')
+
+safedom.select(`.myClass`)
+  .map(safedom.setAttr('id', 'app'))
+        
+//<div class="myClass" id="app"></div>
+
+```
+
+### addClass
+
+Similiar to a node.classList.add()
+
+```javascript
+//<div class="machine-container"></div>
+
+const safedom = require('safedom')
+
+safedom.select(`.machine-container`)
+  .map(safedom.addClass('-with-scale'))
+
+//<div class="machine-container -with-scale"></div>
+
+```
+
+### removeClass
+
+Similiar to a node.classList.remove()
+
+```javascript
+//<div class="machine-container -with-scale"></div>
+
+const safedom = require('safedom')
+
+safedom.select('.machine-container')
+  .map(safedom.removeClass('-with-scale'))
+
+
+//<div class="machine-container"></div>
+```
 
 License
 -------
