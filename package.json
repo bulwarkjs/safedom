@@ -1,6 +1,6 @@
 {
   "name": "safedom",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "safedom is a safe way to you manipulate dom using a purer functional style.",
   "main": "./build/dist/safedom.min.js",
   "scripts": {

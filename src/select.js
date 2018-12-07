@@ -1,8 +1,12 @@
 const { Ok, Error } = require('folktale/result')
 
 const selectNode = (query, node) => {
-  const el = node.querySelector(query)
-  return el ? Ok(el) : Error(`Selector: '${query}' dont found \nMethod: select`)
+  try {
+    const el = node.querySelector(query)
+    return el ? Ok(el) : Error(`Selector: '${query}' dont found \nMethod: select`)
+  } catch (e){
+    return Error(e)
+  }
 }
 
 const select = (query, node) => {
