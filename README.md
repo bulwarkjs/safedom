@@ -152,7 +152,7 @@ console.log(value) //Victor
 ### selectAll
 
 Similiar to an document.querySelectorAll but returns a Result monad from [folktale](https://folktale.origamitower.com/api/v2.3.0/en/folktale.result.html).
-**But querySelectorAll returns a NodeList and safedom, a Array.**
+**But querySelectorAll returns a NodeList and safedom, an Array.**
 
 
 You can use methods available to manipulate value.
