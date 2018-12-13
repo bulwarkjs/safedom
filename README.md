@@ -20,6 +20,8 @@ safedom is a safe way to you manipulate dom using a purer functional style.
   - [setAttr](#setAttr)
   - [addClass](#addClass)
   - [removeClass](#removeClass)
+  - [focus](#focus)
+
   
 - [License](#license)
 
@@ -327,6 +329,19 @@ safedom.select('.machine-container')
 
 
 //<div class="machine-container"></div>
+```
+
+### focus
+
+Focus in specific element
+
+```javascript
+//<div class="machine-container -with-scale"></div>
+
+const safedom = require('safedom')
+
+safedom.select('.machine-container')
+  .map(safedom.focus)
 ```
 
 License
