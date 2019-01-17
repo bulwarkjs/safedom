@@ -1,12 +1,12 @@
 {
   "name": "safedom",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "safedom is a safe way to you manipulate dom using a purer functional style.",
   "main": "./build/dist/safedom.min.js",
   "scripts": {
     "preversion": "npm run build",
     "precommit": "lint-staged",
-    "build:publish": "npm test && ./bin/publish",
+    "build:publish": "sh ./bin/publish",
     "build:dist": "webpack && uglifyjs build/dist/safedom.js -c \"warnings=false\" -m -o build/dist/safedom.min.js",
     "build": "doctoc && rimraf build && buble -i src -o build && npm run build:dist",
     "doctoc": "doctoc README.md",
