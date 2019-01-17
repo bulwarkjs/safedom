@@ -7,6 +7,7 @@ module.exports = {
     filename: 'safedom.js',
     path: path.resolve(__dirname, 'build', 'dist'),
     library: 'safedom',
+    globalObject: 'this',
     libraryTarget: 'umd'
   }
 }
