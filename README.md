@@ -344,6 +344,10 @@ safedom.select('.machine-container')
   .map(safedom.focus)
 ```
 
+## See too
+
+- [safe-web-storage](https://github.com/victorvoid/safe-web-storage).
+
 License
 -------
 
