@@ -1,4 +1,4 @@
-# safedom
+![](https://github.com/victorvoid/safedom/blob/master/safedom.svg)
 
 safedom is a safe way to you manipulate dom using a purer functional style.
 
