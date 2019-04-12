@@ -331,6 +331,22 @@ safedom.select('.machine-container')
 //<div class="machine-container"></div>
 ```
 
+### toggleClass
+
+Similiar to a node.classList.toggle()
+
+```javascript
+//<div class="machine-container -with-scale"></div>
+
+const safedom = require('safedom')
+
+safedom.select('.machine-container')
+  .map(safedom.toggleClass('-with-scale'))
+
+
+//<div class="machine-container"></div>
+```
+
 ### focus
 
 Focus in specific element
