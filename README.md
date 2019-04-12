@@ -20,6 +20,7 @@ safedom is a safe way to you manipulate dom using a purer functional style.
   - [setAttr](#setAttr)
   - [addClass](#addClass)
   - [removeClass](#removeClass)
+  - [toggleClass](#toggleClass)
   - [focus](#focus)
 
   
