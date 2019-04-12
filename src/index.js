@@ -10,5 +10,6 @@ module.exports = {
   removeAttrByQuery: require('./removeAttrByQuery'),
   addClass: require('./addClass'),
   removeClass: require('./removeClass'),
+  toggleClass: require('./toggleClass'),
   focus: require('./focus')
 }
